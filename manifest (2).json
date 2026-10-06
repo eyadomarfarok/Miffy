@@ -6,7 +6,7 @@
   "orientation": "portrait",
   "scope": "/",
   "short_name": "Miffy",
-  "start_url": "/",
+  "start_url": "https://eyadomarfarok.github.io/Miffy/",
   "theme_color": "#ffd1dc",
   "description": "Lojain's daily planner",
   "lang": "ar",
