@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+
+<link rel="manifest" href="manifest (2).json">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مخطط لجين - Miffy 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;background:#FFF8FA;color:#3E2F42}
+.header{background:linear-gradient(135deg,#C7E8FF,#FFD1DC);padding:22px;text-align:center}
+.logo-circle{width:115px;height:115px;margin:0 auto 14px;background:white;border-radius:50%;padding:6px;border:4px solid white;box-shadow:0 8px 20px rgba(0,0,0,.12);overflow:hidden}
+.logo-circle svg{width:100%;height:100%;border-radius:50%;display:block}
+.name-badge{display:inline-flex;gap:8px;background:linear-gradient(135deg,#FFD1DC,#C7E8FF);padding:12px 28px;border-radius:24px;border:3px solid white;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.name-badge h1{font-size:2rem;font-weight:800;margin:0}
+.nav{background:white;display:flex;gap:8px;justify-content:center;padding:12px;position:sticky;top:0;z-index:10;overflow:auto;box-shadow:0 6px 20px rgba(0,0,0,.05)}
+.nav button{border:none;padding:9px 16px;border-radius:22px;font-weight:700;font-family:inherit;background:#F3F6FB;cursor:pointer;white-space:nowrap;font-size:.85rem}
+.nav button.active{background:linear-gradient(135deg,#FF9EAF,#9AD0F5);color:white}
+.main{max-width:1100px;margin:12px auto;display:grid;grid-template-columns:1.4fr.6fr;gap:12px;padding:0 12px}
+@media(max-width:900px){.main{grid-template-columns:1fr}}
+.card{background:white;border-radius:20px;padding:14px;box-shadow:0 8px 24px rgba(0,0,0,.06);border:2px solid white}
+table{width:100%;border-spacing:4px;border-collapse:separate}
+th{background:#C7E8FF;padding:6px;border-radius:10px;font-size:.75rem}
+td{padding:8px 4px;border-radius:10px;text-align:center;background:#FFF0F3;font-size:.82rem}
+td.time{background:#F7FAFF;border:2px solid #C7E8FF;font-weight:700;direction:ltr;font-size:.75rem}
+td.sub{background:white;border:2px solid #FFD1DC;font-weight:700}
+td.break{background:linear-gradient(90deg,#E6F0FF,#FFE3EA);border:2px dashed #C7E8FF;font-weight:700;font-size:.8rem}
+.day{display:none}.day.active{display:block}
+.miffy-small-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 10px}
+.miffy-square{width:85px;height:85px;border-radius:12px;overflow:hidden;border:2.5px solid white;box-shadow:0 4px 12px rgba(0,0,0,.1);background:#FFFBF0}
+.miffy-square svg{width:100%;height:100%;display:block}
+.miffy-name{margin-top:6px;font-weight:800;font-size:.95rem;background:linear-gradient(90deg,#FF9EAF,#7AADE0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.task-input{display:flex;gap:6px;margin-bottom:10px}
+.task-input input{flex:1;padding:10px 12px;border-radius:16px;border:2px solid #FFD1DC;background:#FFF5F7;outline:none;font-size:16px;font-family:inherit}
+.task-input button{padding:10px 14px;border:none;border-radius:16px;background:linear-gradient(135deg,#FF9EAF,#9AD0F5);color:white;font-weight:800;cursor:pointer}
+.stickers{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.sticker{background:white;border-radius:14px;padding:10px;text-align:center;border:2px solid #FFD1DC;font-weight:700;font-size:.8rem}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="logo-circle">
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#FFF6EE"/>
+  <ellipse cx="68" cy="28" rx="20" ry="38" fill="white" stroke="#222" stroke-width="6"/>
+  <ellipse cx="132" cy="28" rx="20" ry="38" fill="white" stroke="#222" stroke-width="6"/>
+  <circle cx="100" cy="108" r="50" fill="white" stroke="#222" stroke-width="6"/>
+  <circle cx="72" cy="113" r="6" fill="#222"/>
+  <circle cx="128" cy="113" r="6" fill="#222"/>
+  <path d="M88 130 L100 138 L112 130 M88 138 L100 146 L112 138" stroke="#222" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="58" cy="126" r="10" fill="#FFD1DC" opacity="0.6"/>
+  <circle cx="142" cy="126" r="10" fill="#FFD1DC" opacity="0.6"/>
+  <path d="M55 145 Q100 132 145 145 L152 188 Q100 200 48 188 Z" fill="#7AADE0" stroke="#222" stroke-width="3"/>
+  <circle cx="52" cy="172" r="9" fill="white" stroke="#222" stroke-width="3"/>
+  <circle cx="148" cy="172" r="9" fill="white" stroke="#222" stroke-width="3"/>
+</svg>
+</div>
+<div class="name-badge"><span>💖</span><h1>مخطط لجين</h1></div>
+<p style="margin-top:8px;font-weight:700;opacity:.8">loujayne planner ☁️</p>
+</div>
+
+<div class="nav">
+<button class="active" onclick="show('mon',this)">الإثنين</button>
+<button onclick="show('tue',this)">الثلاثاء</button>
+<button onclick="show('wed',this)">الأربعاء</button>
+<button onclick="show('thu',this)">الخميس</button>
+<button onclick="show('fri',this)">الجمعة</button>
+<button onclick="show('sat',this)">السبت</button>
+</div>
+
+<div class="main">
+<div class="card">
+<div id="mon" class="day active"><h2>📅 الإثنين</h2><table><tr><th>الوقت</th><th>المادة</th></tr><tr><td class="time">08:00-09:00</td><td class="sub">تربية إسلامية 🕌</td></tr><tr><td class="time">09:00-10:00</td><td class="sub">فرنسية 🇫🇷</td></tr><tr><td class="time">10:00-11:10</td><td class="sub">رياضيات 📐</td></tr><tr><td class="time">11:10-12:11</td><td class="break">بريك ☁️</td></tr><tr><td class="time">12:11-13:14</td><td class="sub">تربية مدنية 🏛️</td></tr><tr><td class="time">13:14-14:15</td><td class="sub">تاريخ وجغرافيا 🗺️</td></tr><tr><td class="time">14:15-15:15</td><td class="sub">علوم فيزيائية 🔬</td></tr><tr><td class="time">15:15-16:17</td><td class="sub">تربية إسلامية 🕌</td></tr></table></div>
+<div id="tue" class="day"><h2>📅 الثلاثاء</h2><table><tr><th>الوقت</th><th>المادة</th></tr><tr><td class="time">08:00-09:00</td><td class="sub">عربية 📖</td></tr><tr><td class="time">09:00-10:00</td><td class="sub">تربية إسلامية 🕌</td></tr><tr><td class="time">10:00-11:10</td><td class="break">بريك</td></tr><tr><td class="time">11:10-12:11</td><td class="break">بريك</td></tr><tr><td class="time">12:11-13:14</td><td class="sub">إنجليزية 🇬🇧</td></tr><tr><td class="time">13:14-14:15</td><td class="sub">إنجليزية 🇬🇧</td></tr><tr><td class="time">14:15-15:15</td><td class="sub">رياضيات 📐</td></tr><tr><td class="time">15:15-16:17</td><td class="sub">إنجليزية 🇬🇧</td></tr></table></div>
+<div id="wed" class="day"><h2>📅 الأربعاء</h2><table><tr><th>الوقت</th><th>المادة</th></tr><tr><td class="time">08:00-09:00</td><td class="sub">إعلامية 🎙️</td></tr><tr><td class="time">09:00-11:10</td><td class="break">بريك طويل</td></tr><tr><td class="time">11:10-12:11</td><td class="break">بريك</td></tr><tr><td class="time">12:11-13:14</td><td class="sub">علوم فيزيائية 🔬</td></tr><tr><td class="time">13:14-14:15</td><td class="sub">تاريخ وجغرافيا 🗺️</td></tr><tr><td class="time">14:15-15:15</td><td class="sub">عربية 📖</td></tr><tr><td class="time">15:15-16:17</td><td class="sub">تربية إسلامية 🕌</td></tr></table></div>
+<div id="thu" class="day"><h2>📅 الخميس</h2><table><tr><th>الوقت</th><th>المادة</th></tr><tr><td class="time">08:00-09:00</td><td class="sub">إعلامية 🎙️</td></tr><tr><td class="time">09:00-10:00</td><td class="sub">إنجليزية 🇬🇧</td></tr><tr><td class="time">10:00-13:14</td><td class="break">بريك</td></tr><tr><td class="time">13:14-14:15</td><td class="sub">فرنسية 🇫🇷</td></tr><tr><td class="time">14:15-15:15</td><td class="sub">إنجليزية 🇬🇧</td></tr></table></div>
+<div id="fri" class="day"><h2>📅 الجمعة</h2><table><tr><th>الوقت</th><th>المادة</th></tr><tr><td class="time">08:00-09:00</td><td class="sub">رياضيات 📐</td></tr><tr><td class="time">09:00-10:00</td><td class="sub">تربية بدنية 🏃‍♀️</td></tr><tr><td class="time">10:00-11:10</td><td class="sub">تربية بدنية 🏃‍♀️</td></tr><tr><td class="time">11:10-12:11</td><td class="break">بريك</td></tr><tr><td class="time">12:11-13:14</td><td class="sub">تربية تكنولوجية 💻</td></tr></table></div>
+<div id="sat" class="day"><h2>📅 السبت</h2><table><tr><th>الوقت</th><th>المادة</th></tr><tr><td class="time">08:00-09:00</td><td class="sub">رياضيات 📐</td></tr><tr><td class="time">09:00-10:00</td><td class="sub">تربية بدنية 🏃‍♀️</td></tr><tr><td class="time">10:00-11:10</td><td class="sub">تربية مدنية 🏛️</td></tr><tr><td class="time">11:10-12:11</td><td class="break">بريك</td></tr><tr><td class="time">12:11-13:14</td><td class="break">بريك</td></tr><tr><td class="time">15:15-16:17</td><td class="sub">تربية إسلامية 🕌</td></tr></table></div>
+</div>
+
+<div>
+<div class="card" style="text-align:center">
+<div class="miffy-small-wrap">
+<div class="miffy-square">
+<!-- Miffy صغير مربع -->
+<svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="140" fill="white"/>
+  <ellipse cx="40" cy="18" rx="12" ry="22" fill="white" stroke="black" stroke-width="3.5" stroke-linecap="round"/>
+  <ellipse cx="80" cy="18" rx="12" ry="22" fill="white" stroke="black" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="60" cy="60" r="32" fill="white" stroke="black" stroke-width="3.5"/>
+  <circle cx="42" cy="63" r="4" fill="black"/>
+  <circle cx="78" cy="63" r="4" fill="black"/>
+  <path d="M53 74 L60 78 L67 74 M53 78 L60 82 L67 78" stroke="black" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M24 76 Q60 70 96 76 L104 130 Q60 138 16 130 Z" fill="#1A2F4A" stroke="black" stroke-width="3.5"/>
+  <path d="M48 86 L54 96 L60 86 L66 96 L72 86" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="28" cy="134" r="7" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="92" cy="134" r="7" fill="white" stroke="black" stroke-width="2.5"/>
+</svg>
+</div>
+<div class="miffy-name">Miffy 🐰</div>
+</div>
+
+<h2>الأرنب بتاع لجين</h2>
+<p style="font-size:.9rem">Good Morning! So cute! 💖</p>
+<div class="stickers"><div class="sticker">🐸 Good Morning</div><div class="sticker">🐰 So cute!</div><div class="sticker">🐻 You're welcome</div><div class="sticker">🍞 Yummy!</div></div>
+</div>
+<div class="card" style="margin-top:10px"><h2>💖 مهام لجين</h2><div class="task-input"><input id="inp" placeholder="مهمة جديدة..."><button onclick="add()">+</button></div><div id="list"></div></div>
+</div>
+</div>
+
+<script>
+function show(id,el){document.querySelectorAll('.day').forEach(d=>d.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));el.classList.add('active')}
+let tasks=JSON.parse(localStorage.getItem('lojainFixed')||'[]');function save(){localStorage.setItem('lojainFixed',JSON.stringify(tasks))}function render(){const l=document.getElementById('list');l.innerHTML='';tasks.forEach((t,i)=>{const d=document.createElement('div');d.innerHTML='<span>'+['🐸','🐰','🐻'][i%3]+'</span><span style="flex:1">'+t.text+'</span><input type=checkbox '+(t.done?'checked':'')+' onchange="tog('+i+')"><button onclick="del('+i+')" style="border:none;background:#FFE0E6;width:24px;height:24px;border-radius:50%">✕</button>';d.style.cssText='display:flex;align-items:center;gap:8px;background:#FFF8FA;border-radius:14px;padding:10px;margin-bottom:8px;border:1.5px solid #FFE0E8';l.appendChild(d)})}function add(){const inp=document.getElementById('inp');if(!inp.value.trim())return;tasks.unshift({text:inp.value,done:false});inp.value='';save();render()}function tog(i){tasks[i].done=!tasks[i].done;save();render()}function del(i){tasks.splice(i,1);save();render()}document.getElementById('inp').addEventListener('keydown',e=>{if(e.key==='Enter')add()});if(tasks.length==0){tasks=[{text:'تربية إسلامية 🕌',done:false},{text:'رياضيات 📐',done:false}];save()}render();
+</script>
+</body>
+</html>
